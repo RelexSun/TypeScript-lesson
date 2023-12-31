@@ -77,3 +77,36 @@ let ride2 = new Ride();
 ride2.start();
 
 console.log(Ride.activeRides);
+
+// ------------- Inheritance -------------------
+// for best practice we should seperate classes into different files
+class Person {
+  constructor(
+    public firstName: string,
+    public lastName: string,
+    public age: number
+  ) {}
+  get fullName() {
+    return this.firstName + " " + this.lastName;
+  }
+  walk() {
+    console.log("walk");
+  }
+}
+
+class Student extends Person {
+  constructor(
+    public id: number,
+    firstName: string,
+    lastName: string,
+    age: number
+  ) {
+    // Inheritance
+    super(firstName, lastName, age);
+  }
+  takeTest() {
+    console.log("Take test");
+  }
+}
+
+let student = new Student(1, "Sun", "Nop", 20);
