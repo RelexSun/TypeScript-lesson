@@ -42,3 +42,15 @@ account.deposit(100);
 console.log(account instanceof Account);
 // use instanceof to check whether the type of the custom object is an instance of a given class
 console.log(account.balance);
+
+// --------- index signature -------------------
+class SeatAssignment {
+  // A1, A2, ...
+  // Mosh, John,....
+  // Index signature property
+  [seatNumber: string]: string;
+}
+
+let seats = new SeatAssignment();
+seats.A1 = "Sun";
+seats.A2 = 1; // error
