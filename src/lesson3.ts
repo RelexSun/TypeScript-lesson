@@ -138,4 +138,24 @@ printNames([
   new Principal("John", "Smith", 50),
 ]);
 
-// ---------------------- Private vs Protected Members --------------------------------
+// ---------------- Private vs Protected Members -------------------------
+
+// ---------------- Abstract Classes and Methods -------------------------
+abstract class Shape {
+  // abstract class is not ready to be used
+  // abstract method can only appear in abstract classes
+  constructor(public color: string) {}
+  // render() {}
+  abstract render(): void;
+}
+
+class Circle extends Shape {
+  constructor(public radius: number, color: string) {
+    super(color);
+  }
+  override render(): void {
+    console.log("Rendering a circle");
+  }
+}
+
+// TODO: let shape = new Shape("red"); can't use
