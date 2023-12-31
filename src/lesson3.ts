@@ -109,4 +109,33 @@ class Student extends Person {
   }
 }
 
-let student = new Student(1, "Sun", "Nop", 20);
+// ---------------------- Method Overriding --------------------------------
+// set noImplicitOverride to true in order to override
+class Teacher extends Person {
+  // use override to stay connected to the base class so that it is immutable
+  override get fullName() {
+    return "Professor" + super.fullName;
+  }
+}
+
+let teacher = new Teacher("Soum", "Somon", 32);
+console.log(teacher.fullName);
+
+// ---------------------- Polymorphism --------------------------------
+class Principal extends Person {
+  override get fullName() {
+    return "Principal" + super.fullName;
+  }
+}
+
+function printNames(people: Person[]) {
+  for (let person of people) console.log(person.firstName);
+}
+
+printNames([
+  new Student(2, "Sun", "Smith", 20),
+  new Teacher("Somon", "Smith", 40),
+  new Principal("John", "Smith", 50),
+]);
+
+// ---------------------- Private vs Protected Members --------------------------------
