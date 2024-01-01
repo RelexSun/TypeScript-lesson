@@ -159,3 +159,33 @@ class Circle extends Shape {
 }
 
 // TODO: let shape = new Shape("red"); can't use
+
+// ---------------- Interfaces -------------------------
+// abstract class Calendar {
+//   constructor(public name: string) {}
+//   abstract addEvent(): void;
+//   abstract removeEvent(): void;
+// }
+
+// only in typescript
+// this is shorter
+interface Calendar {
+  name: string;
+  addEvent(): void;
+  removeEvent(): void;
+}
+
+interface cloudCalendar extends Calendar {
+  sync(): void;
+}
+
+class GoogleCalendar implements Calendar {
+  constructor(public name: string) {}
+
+  addEvent(): void {
+    throw new Error("Method not implemented.");
+  }
+  removeEvent(): void {
+    throw new Error("Method not implemented.");
+  }
+}
