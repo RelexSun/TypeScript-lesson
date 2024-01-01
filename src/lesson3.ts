@@ -189,3 +189,21 @@ class GoogleCalendar implements Calendar {
     throw new Error("Method not implemented.");
   }
 }
+
+// Interface
+interface Person1 {
+  name: string;
+}
+
+let person: Person1 = {
+  name: "Sun",
+};
+
+// Type
+type Person2 = {
+  name: string;
+};
+
+let person2: Person2 = {
+  name: "Sun",
+};
